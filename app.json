@@ -1,48 +1,50 @@
 {
   "expo": {
-    "name": "my-gallery",
+    "name": "My Gallery",
     "slug": "my-gallery",
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
     "scheme": "mygallery",
-    "userInterfaceStyle": "automatic",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
     "newArchEnabled": true,
+    "orientation": "portrait",
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
     "ios": {
-      "supportsTablet": true
+      "bundleIdentifier": "com.abhinay.mygallery",
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSMicrophoneUsageDescription": "We use the microphone for voice captions",
+        "NSPhotoLibraryAddUsageDescription": "We save selected photos to your gallery database",
+        "NSPhotoLibraryUsageDescription": "We need access to your photos to let you pick images",
+        "NSCameraUsageDescription": "We need the camera to take photos"
+      }
     },
     "android": {
-      "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/images/android-icon-foreground.png",
-        "backgroundImage": "./assets/images/android-icon-background.png",
-        "monochromeImage": "./assets/images/android-icon-monochrome.png"
-      },
-      "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "package": "com.abhinay.mygallery",
+      "permissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.CAMERA",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE"
+      ]
     },
-    "web": {
-      "output": "static",
-      "favicon": "./assets/images/favicon.png"
+    "extra": {
+      "eas": {
+        "projectId": "YOUR-EAS-PROJECT-ID"
+      },
+      "googleWebClientId": "944451688443-j3t502v2pebmhh0bqtd3g9h3ukpf4rh6.apps.googleusercontent.com",
+      "googleAndroidClientId": "944451688443-etegcqj4i9sa6g0fjrtbm710iq6io2i5.apps.googleusercontent.com",
+      "googleIosClientId": "944451688443-p1khii1l9enc1but1mvl1m0f930lk08s.apps.googleusercontent.com"
     },
     "plugins": [
-      "expo-router",
-      [
-        "expo-splash-screen",
-        {
-          "image": "./assets/images/splash-icon.png",
-          "imageWidth": 200,
-          "resizeMode": "contain",
-          "backgroundColor": "#ffffff",
-          "dark": {
-            "backgroundColor": "#000000"
-          }
-        }
-      ]
-    ],
-    "experiments": {
-      "typedRoutes": true,
-      "reactCompiler": true
-    }
+      "expo-sqlite",
+      "expo-web-browser"
+    ]
   }
 }

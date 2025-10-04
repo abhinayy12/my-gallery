@@ -5,8 +5,10 @@ node_modules/
 
 # Expo
 .expo/
+.expo-shared/
 dist/
 web-build/
+coverage/
 expo-env.d.ts
 
 # Native
@@ -17,6 +19,7 @@ expo-env.d.ts
 *.p12
 *.key
 *.mobileprovision
+*.log
 
 # Metro
 .metro-health-check*
@@ -31,6 +34,7 @@ yarn-error.*
 *.pem
 
 # local env files
+.env
 .env*.local
 
 # typescript
