@@ -28,7 +28,7 @@ export default function AuthScreen({ navigation }: any) {
     iosClientId: extra.googleIosClientId,
     androidClientId: extra.googleAndroidClientId,
     webClientId: extra.googleWebClientId, // must be the Web Application client ID
-    redirectUri,                           // <- IMPORTANT
+    ...(redirectUri ? { redirectUri } : {}),                           // <- IMPORTANT
     // scopes: ['openid', 'profile', 'email'], // defaults are fine; uncomment if you want
   });
 
