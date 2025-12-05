@@ -45,6 +45,9 @@ export default function GalleryScreen() {
         <Pressable style={styles.iconBtn} onPress={() => nav.navigate('Settings')}>
           <Text style={styles.iconTxt}>⚙️</Text>
         </Pressable>
+        <Pressable style={styles.iconBtn} onPress={() => nav.navigate('RecycleBin')}>
+  <Text style={styles.iconTxt}>🗑️</Text>
+</Pressable>
       </View>
 
       <View style={styles.searchRow}>
@@ -84,6 +87,7 @@ export default function GalleryScreen() {
                 await updateCaption(id, caption);
                 refresh();
               }}
+              onDeleted={() => refresh()}
             />
           )}
           contentContainerStyle={{ padding: 8 }}

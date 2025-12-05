@@ -9,12 +9,14 @@ import SettingsScreen from './screens/SettingsScreen';
 
 import { AuthProvider } from './providers/AuthProvider';
 import { ThemeProvider, useThemeMode } from './providers/ThemeProvider';
+import RecycleBinScreen from './screens/RecycleBinScreen';
 
 export type RootStackParamList = {
   Auth: undefined;
   Gallery: undefined;
   Add: undefined;
   Settings: undefined;
+  RecycleBin: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -29,6 +31,7 @@ function RootNavigator() {
         <Stack.Screen name="Gallery" component={GalleryScreen} options={{ title: 'My Gallery' }} />
         <Stack.Screen name="Add" component={AddScreen} options={{ title: 'Add Photo' }} />
         <Stack.Screen name="Settings" component={SettingsScreen} />
+        <Stack.Screen name="RecycleBin" component={RecycleBinScreen} options={{ title: 'Recycle Bin' }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
